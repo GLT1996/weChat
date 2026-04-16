@@ -1,0 +1,11 @@
+# IDE
+.idea/
+
+# 微信开发者工具私人配置
+project.private.config.json
+
+# node_modules
+node_modules/
+
+# 云函数依赖（上传到云端，不需要本地提交）
+cloudfunctions/*/node_modules/

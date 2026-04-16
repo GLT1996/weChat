@@ -1,0 +1,9 @@
+{
+  "name": "updateTodo",
+  "version": "1.0.0",
+  "description": "更新待办状态",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

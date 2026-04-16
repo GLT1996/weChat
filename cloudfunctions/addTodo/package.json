@@ -1,0 +1,9 @@
+{
+  "name": "addTodo",
+  "version": "1.0.0",
+  "description": "添加待办事项",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

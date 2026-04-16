@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/add/add"
+  ],
+  "window": {
+    "navigationBarTitleText": "待办清单",
+    "navigationBarBackgroundColor": "#667eea",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f8f9fa"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,49 @@
+<!-- 待办列表首页 -->
+<view class="container">
+  <!-- 头部统计 -->
+  <view class="header">
+    <view class="stats">
+      <text class="stats-title">今日待办</text>
+      <text class="stats-count">{{todoList.length}} 项</text>
+    </view>
+    <view class="completed-stats">
+      <text class="completed-count">已完成 {{completedCount}} 项</text>
+    </view>
+  </view>
+
+  <!-- 待办列表 -->
+  <view class="todo-list" wx:if="{{todoList.length > 0}}">
+    <view class="todo-item {{item.completed ? 'completed' : ''}}" wx:for="{{todoList}}" wx:key="_id">
+      <!-- 完成按钮 -->
+      <view class="check-btn {{item.completed ? 'checked' : ''}}" bindtap="toggleComplete" data-id="{{item._id}}">
+        <text wx:if="{{item.completed}}">✓</text>
+      </view>
+
+      <!-- 内容 -->
+      <view class="todo-content">
+        <text class="todo-title">{{item.title}}</text>
+        <view class="todo-meta">
+          <text class="priority priority-{{item.priority}}">{{item.priorityText}}</text>
+          <text class="todo-time">{{item.timeText}}</text>
+        </view>
+      </view>
+
+      <!-- 删除按钮 -->
+      <view class="delete-btn" bindtap="deleteTodo" data-id="{{item._id}}">
+        <text>删除</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:else>
+    <text class="empty-icon">📝</text>
+    <text class="empty-text">暂无待办事项</text>
+    <text class="empty-tip">点击下方按钮添加</text>
+  </view>
+
+  <!-- 添加按钮 -->
+  <view class="add-btn" bindtap="goToAdd">
+    <text>添加待办</text>
+  </view>
+</view>

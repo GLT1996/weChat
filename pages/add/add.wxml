@@ -1,0 +1,35 @@
+<!-- 添加待办页面 -->
+<view class="container">
+  <!-- 表单 -->
+  <view class="form-card">
+    <view class="form-item">
+      <text class="label">待办事项</text>
+      <input
+        class="input"
+        placeholder="请输入待办内容"
+        value="{{title}}"
+        bindinput="onTitleInput"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="label">优先级</text>
+      <view class="priority-options">
+        <view class="priority-option {{priority === 1 ? 'active' : ''}}" bindtap="setPriority" data-priority="1">
+          <text>低</text>
+        </view>
+        <view class="priority-option {{priority === 2 ? 'active' : ''}}" bindtap="setPriority" data-priority="2">
+          <text>中</text>
+        </view>
+        <view class="priority-option {{priority === 3 ? 'active' : ''}}" bindtap="setPriority" data-priority="3">
+          <text>高</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="submit-btn {{title ? '' : 'disabled'}}" bindtap="submitTodo">
+    <text>保存</text>
+  </view>
+</view>
