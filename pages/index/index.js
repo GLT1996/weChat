@@ -121,5 +121,10 @@ Page({
   // 跳转大气计算页面
   goToCalc() {
     wx.navigateTo({ url: '/pages/calc/calc' })
+  },
+
+  // 跳转汇率转换页面
+  goToExchange() {
+    wx.navigateTo({ url: '/pages/exchange/exchange' })
   }
 })

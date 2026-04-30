@@ -1,0 +1,91 @@
+<!-- 汇率转换页面 -->
+<view class="container">
+  <!-- 源币种输入 -->
+  <view class="card">
+    <view class="card-title">源币种</view>
+    <view class="input-row">
+      <picker mode="selector" range="{{currencies}}" range-key="name" value="{{fromIndex}}" bindchange="onFromChange">
+        <view class="picker-btn">
+          <text class="picker-code">{{fromCurrency}}</text>
+          <text class="picker-name">{{fromName}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+    <view class="card-title">金额</view>
+    <view class="input-row">
+      <input
+        class="amount-input"
+        type="digit"
+        placeholder="请输入金额"
+        value="{{amount}}"
+        bindinput="onAmountInput"
+      />
+      <text class="unit">{{fromCurrency}}</text>
+    </view>
+  </view>
+
+  <!-- 目标币种选择 -->
+  <view class="card">
+    <view class="card-title">目标币种</view>
+    <view class="input-row">
+      <picker mode="selector" range="{{currencies}}" range-key="name" value="{{toIndex}}" bindchange="onToChange">
+        <view class="picker-btn">
+          <text class="picker-code">{{toCurrency}}</text>
+          <text class="picker-name">{{toName}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 交换按钮 -->
+  <view class="swap-btn" bindtap="swapCurrency">
+    <text>⇅ 交换币种</text>
+  </view>
+
+  <!-- 计算按钮 -->
+  <view class="calc-btn" bindtap="convert">
+    <text>计算转换</text>
+  </view>
+
+  <!-- 结果区域 -->
+  <view class="card result-card" wx:if="{{showResult}}">
+    <view class="card-title">转换结果</view>
+
+    <view class="result-main">
+      <text class="result-amount">{{amount}}</text>
+      <text class="result-currency">{{fromCurrency}}</text>
+      <text class="result-equal">=</text>
+      <text class="result-amount highlight">{{result}}</text>
+      <text class="result-currency">{{toCurrency}}</text>
+    </view>
+
+    <view class="result-detail">
+      <view class="detail-item">
+        <text class="detail-label">汇率</text>
+        <text class="detail-value">1 {{fromCurrency}} = {{rate}} {{toCurrency}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">更新时间</text>
+        <text class="detail-value">{{updateTime}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 快速选择 -->
+  <view class="card">
+    <view class="card-title">常用货币</view>
+    <view class="quick-list">
+      <view class="quick-item {{fromCurrency === item.code ? 'active' : ''}}" wx:for="{{quickCurrencies}}" wx:key="code" bindtap="quickSelect" data-code="{{item.code}}" data-index="{{index}}">
+        <text class="quick-code">{{item.code}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 提示 -->
+  <view class="tips">
+    <text class="tips-title">提示</text>
+    <text class="tips-text">汇率数据每日更新，实际兑换请以银行实时汇率为准。</text>
+  </view>
+</view>

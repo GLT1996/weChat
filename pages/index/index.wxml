@@ -50,5 +50,8 @@
     <view class="calc-btn" bindtap="goToCalc">
       <text>大气计算</text>
     </view>
+    <view class="exchange-btn" bindtap="goToExchange">
+      <text>汇率转换</text>
+    </view>
   </view>
 </view>

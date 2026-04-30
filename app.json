@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/add/add",
-    "pages/calc/calc"
+    "pages/calc/calc",
+    "pages/exchange/exchange"
   ],
   "window": {
     "navigationBarTitleText": "待办清单",

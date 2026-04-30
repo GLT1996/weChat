@@ -1,0 +1,209 @@
+/* 汇率转换页面样式 */
+.container {
+  padding: 20rpx;
+  padding-bottom: 100rpx;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+}
+
+/* 选择器按钮 */
+.picker-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5f7fa;
+  border-radius: 12rpx;
+  padding: 20rpx 24rpx;
+}
+
+.picker-code {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.picker-name {
+  font-size: 24rpx;
+  color: #666;
+  flex: 1;
+  margin-left: 16rpx;
+}
+
+.picker-arrow {
+  font-size: 20rpx;
+  color: #999;
+}
+
+/* 金额输入 */
+.input-row {
+  display: flex;
+  align-items: center;
+}
+
+.amount-input {
+  flex: 1;
+  height: 80rpx;
+  background: #f5f7fa;
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.unit {
+  font-size: 28rpx;
+  color: #666;
+  margin-left: 16rpx;
+  font-weight: 500;
+}
+
+/* 交换按钮 */
+.swap-btn {
+  text-align: center;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.swap-btn text {
+  font-size: 28rpx;
+  color: #667eea;
+}
+
+/* 计算按钮 */
+.calc-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  text-align: center;
+  padding: 28rpx 0;
+  border-radius: 12rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+  box-shadow: 0 8rpx 24rpx rgba(102, 126, 234, 0.25);
+}
+
+.calc-btn:active {
+  opacity: 0.85;
+}
+
+/* 结果区域 */
+.result-card {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.result-card .card-title {
+  color: #fff;
+}
+
+.result-main {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: 30rpx 0;
+  margin-bottom: 20rpx;
+}
+
+.result-amount {
+  font-size: 40rpx;
+  color: #fff;
+}
+
+.result-amount.highlight {
+  font-size: 48rpx;
+  font-weight: 600;
+}
+
+.result-currency {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 8rpx;
+}
+
+.result-equal {
+  font-size: 32rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 16rpx;
+}
+
+.result-detail {
+  border-top: 1rpx solid rgba(255, 255, 255, 0.2);
+  padding-top: 20rpx;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12rpx 0;
+}
+
+.detail-label {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.detail-value {
+  font-size: 24rpx;
+  color: #fff;
+}
+
+/* 快速选择 */
+.quick-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.quick-item {
+  width: calc(25% - 9rpx);
+  background: #f5f7fa;
+  border-radius: 8rpx;
+  padding: 16rpx 0;
+  text-align: center;
+}
+
+.quick-item.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.quick-item.active .quick-code {
+  color: #fff;
+}
+
+.quick-code {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+/* 提示 */
+.tips {
+  padding: 20rpx;
+  background: #fff9e6;
+  border-radius: 12rpx;
+}
+
+.tips-title {
+  font-size: 24rpx;
+  color: #b8860b;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.tips-text {
+  font-size: 22rpx;
+  color: #8b6914;
+  line-height: 1.5;
+}
