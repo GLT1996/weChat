@@ -174,12 +174,18 @@
   margin-top: 10rpx;
 }
 
-/* 添加按钮 */
-.add-btn {
+/* 底部按钮区 */
+.bottom-actions {
   position: fixed;
   left: 30rpx;
   right: 30rpx;
   bottom: 40rpx;
+  display: flex;
+  gap: 20rpx;
+}
+
+.add-btn {
+  flex: 1;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 28rpx;
   border-radius: 50rpx;
@@ -187,7 +193,17 @@
   box-shadow: 0 10rpx 30rpx rgba(102, 126, 234, 0.3);
 }
 
-.add-btn text {
+.calc-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  padding: 28rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  box-shadow: 0 10rpx 30rpx rgba(17, 153, 142, 0.3);
+}
+
+.add-btn text,
+.calc-btn text {
   font-size: 32rpx;
   font-weight: 500;
   color: #fff;

@@ -116,5 +116,10 @@ Page({
   // 跳转添加页面
   goToAdd() {
     wx.navigateTo({ url: '/pages/add/add' })
+  },
+
+  // 跳转大气计算页面
+  goToCalc() {
+    wx.navigateTo({ url: '/pages/calc/calc' })
   }
 })

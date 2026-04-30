@@ -1,0 +1,93 @@
+<!-- 大气计算页面 -->
+<view class="container">
+  <!-- 输入区域 -->
+  <view class="card">
+    <view class="card-title">输入高度</view>
+    <view class="input-row">
+      <input
+        class="height-input"
+        type="digit"
+        placeholder="请输入高度"
+        value="{{height}}"
+        bindinput="onHeightInput"
+      />
+      <text class="unit">米</text>
+    </view>
+    <view class="calc-btn" bindtap="calculate">计算</view>
+  </view>
+
+  <!-- 结果区域 -->
+  <view class="card result-card" wx:if="{{showResult}}">
+    <view class="card-title">计算结果</view>
+
+    <view class="result-item">
+      <view class="result-label">高度</view>
+      <view class="result-value">{{height}} 米</view>
+    </view>
+
+    <view class="result-item">
+      <view class="result-label">温度</view>
+      <view class="result-value">
+        <text class="value-num">{{temperature}}</text>
+        <text class="value-unit">°C</text>
+      </view>
+    </view>
+
+    <view class="result-item">
+      <view class="result-label">气压</view>
+      <view class="result-value">
+        <text class="value-num">{{pressure}}</text>
+        <text class="value-unit">hPa</text>
+      </view>
+    </view>
+
+    <view class="result-item">
+      <view class="result-label">空气密度</view>
+      <view class="result-value">
+        <text class="value-num">{{density}}</text>
+        <text class="value-unit">kg/m³</text>
+      </view>
+    </view>
+
+    <view class="result-item">
+      <view class="result-label">音速 (1马赫)</view>
+      <view class="result-value">
+        <text class="value-num">{{speedOfSound}}</text>
+        <text class="value-unit">m/s</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 参考数据 -->
+  <view class="card">
+    <view class="card-title">参考高度</view>
+    <view class="reference-list">
+      <view class="reference-item" bindtap="setHeight" data-height="0">
+        <text class="ref-name">海平面</text>
+        <text class="ref-height">0 米</text>
+      </view>
+      <view class="reference-item" bindtap="setHeight" data-height="1500">
+        <text class="ref-name">城市平均</text>
+        <text class="ref-height">1500 米</text>
+      </view>
+      <view class="reference-item" bindtap="setHeight" data-height="3000">
+        <text class="ref-name">高山</text>
+        <text class="ref-height">3000 米</text>
+      </view>
+      <view class="reference-item" bindtap="setHeight" data-height="8848">
+        <text class="ref-name">珠穆朗玛峰</text>
+        <text class="ref-height">8848 米</text>
+      </view>
+      <view class="reference-item" bindtap="setHeight" data-height="10000">
+        <text class="ref-name">民航客机</text>
+        <text class="ref-height">10000 米</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 说明 -->
+  <view class="tips">
+    <text class="tips-title">说明</text>
+    <text class="tips-text">基于国际标准大气模型(ISA)计算，适用于对流层内(0-11000米)的高度。</text>
+  </view>
+</view>

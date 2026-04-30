@@ -42,8 +42,13 @@
     <text class="empty-tip">点击下方按钮添加</text>
   </view>
 
-  <!-- 添加按钮 -->
-  <view class="add-btn" bindtap="goToAdd">
-    <text>添加待办</text>
+  <!-- 底部按钮区 -->
+  <view class="bottom-actions">
+    <view class="add-btn" bindtap="goToAdd">
+      <text>添加待办</text>
+    </view>
+    <view class="calc-btn" bindtap="goToCalc">
+      <text>大气计算</text>
+    </view>
   </view>
 </view>
